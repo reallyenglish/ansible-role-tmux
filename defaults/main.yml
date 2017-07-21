@@ -1,0 +1,8 @@
+tmux_user: tmux
+tmux_group: tmux
+tmux_log_dir: /var/log/tmux
+tmux_db_dir: "{{ __tmux_db_dir }}"
+tmux_service: tmux
+tmux_conf_dir: "{{ __tmux_conf_dir }}"
+tmux_conf_file: "{{ __tmux_conf_dir }}/tmux.conf"
+tmux_flags: ""

@@ -1,0 +1,6 @@
+---
+
+- name: Install tmux
+  pkgng:
+    name: tmux
+    state: present

@@ -1,0 +1,6 @@
+---
+
+- name: Restart tmux
+  service:
+    name: tmux
+    state: restarted
