@@ -2,5 +2,4 @@
   roles:
     - ansible-role-tmux
   vars:
-    tmux_additional_packages:
-      - sysutils/py-tmuxp
+    tmux_additional_packages: "{% if ansible_os_family == 'FreeBSD' %}[ 'sysutils/py-tmuxp' ]{% elif ansible_os_family == 'Debian' %}[ 'tmuxinator' ]{% elif ansible_os_family == 'RedHat' %}[]{% endif %}"

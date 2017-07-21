@@ -2,7 +2,14 @@ require "spec_helper"
 require "serverspec"
 
 package = "tmux"
-additional_packages = ["sysutils/py-tmuxp"]
+additional_packages = []
+
+case os[:family]
+when "ubuntu"
+  additional_packages = ["tmuxinator"]
+when "freebsd"
+  additional_packages = ["sysutils/py-tmuxp"]
+end
 
 describe package(package) do
   it { should be_installed }

@@ -13,12 +13,23 @@ None
 | `tmux_package` | | `{{ __tmux_package }}` |
 | `tmux_additional_packages` | | `[]` |
 
+## Debian
+
+| Variable | Default |
+|----------|---------|
+| `__tmux_package` | `tmux` |
+
 ## FreeBSD
 
 | Variable | Default |
 |----------|---------|
 | `__tmux_package` | `tmux` |
 
+## RedHat
+
+| Variable | Default |
+|----------|---------|
+| `__tmux_package` | `tmux` |
 
 # Dependencies
 
@@ -31,8 +42,7 @@ None
   roles:
     - ansible-role-tmux
   vars:
-    tmux_additional_packages:
-      - sysutils/py-tmuxp
+    tmux_additional_packages: "{% if ansible_os_family == 'FreeBSD' %}[ 'sysutils/py-tmuxp' ]{% elif ansible_os_family == 'Debian' %}[ 'tmuxinator' ]{% elif ansible_os_family == 'RedHat' %}[]{% endif %}"
 ```
 
 # License

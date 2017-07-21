@@ -1,0 +1,12 @@
+---
+
+- name: Install tmux
+  yum:
+    name: "{{ tmux_package }}"
+    state: present
+
+- name: Install tmux_additional_packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ tmux_additional_packages }}"
