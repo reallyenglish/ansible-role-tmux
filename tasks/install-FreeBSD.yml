@@ -2,5 +2,11 @@
 
 - name: Install tmux
   pkgng:
-    name: tmux
+    name: "{{ tmux_package }}"
     state: present
+
+- name: Install tmux_additional_packages
+  pkgng:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ tmux_additional_packages }}"

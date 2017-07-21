@@ -1,2 +1,1 @@
-__tmux_db_dir: /var/db/tmux
-__tmux_conf_dir: /usr/local/etc/tmux
+__tmux_package: tmux

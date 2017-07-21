@@ -2,4 +2,5 @@
   roles:
     - ansible-role-tmux
   vars:
-    tmux_config: ""
+    tmux_additional_packages:
+      - sysutils/py-tmuxp

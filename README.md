@@ -1,6 +1,6 @@
 # ansible-role-tmux
 
-A brief description of the role goes here.
+Install tmux
 
 # Requirements
 
@@ -8,8 +8,16 @@ None
 
 # Role Variables
 
-| variable | description | default |
+| Variable | Description | Default |
 |----------|-------------|---------|
+| `tmux_package` | | `{{ __tmux_package }}` |
+| `tmux_additional_packages` | | `[]` |
+
+## FreeBSD
+
+| Variable | Default |
+|----------|---------|
+| `__tmux_package` | `tmux` |
 
 
 # Dependencies
@@ -19,6 +27,12 @@ None
 # Example Playbook
 
 ```yaml
+- hosts: localhost
+  roles:
+    - ansible-role-tmux
+  vars:
+    tmux_additional_packages:
+      - sysutils/py-tmuxp
 ```
 
 # License
